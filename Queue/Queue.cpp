@@ -4,7 +4,10 @@ template<typename DT>
 void Queue<DT>::enQueue(DT value) {
     auto* node = new NODE<DT>;
     node->data = value;
-    list.add(node);
+
+    // the function list.add do not accpet argument as pointer, so 
+    // we need to pass the node by dereferencing the pointer.
+    list.add(*node);
 }
 
 template<typename DT>
@@ -13,7 +16,7 @@ DT Queue<DT>::deQueue() {
         cout << "Queue Empty.";
         return -1;
     }
-    data = list.get_at_index(list.size - 1).data;
+    DT data = list.get_at_index(list.size - 1).data;
     list.remove(list.size - 1);
     return data;
 }
@@ -34,6 +37,6 @@ void Queue<DT>::display() {
         return;
     }
     for (int i = 0; i < list.size ; i++) {
-        cout << list.get_at_index(i).data;
+        cout << list.get_at_index(i).data << endl;
     }
 }

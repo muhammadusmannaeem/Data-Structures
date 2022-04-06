@@ -99,12 +99,13 @@ DT LinkedList<DT>::get_at_index(int index){
     int i = 0;
     while (node != nullptr) {
         if(i == index) {
-            return node;
+            // need to return node from queue or stack.
+            return node->data;
         }
         node = node->next;
         i++;
     }
-    return nullptr;
+    return {};
 }
 
 template<typename DT>
