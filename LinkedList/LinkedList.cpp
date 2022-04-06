@@ -108,6 +108,11 @@ DT LinkedList<DT>::get_at_index(int index){
 }
 
 template<typename DT>
+DT LinkedList<DT>::get_data_at_index(int index){
+    return get_at_index(index)->data;
+}
+
+template<typename DT>
 int LinkedList<DT>::get_index_of(DT node){
     Node<DT>* temp = head;
     int i = 0;

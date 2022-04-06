@@ -52,9 +52,16 @@ public:
     /**
      * Get node at specific index
      * @param index
-     * @return
+     * @return Node
      */
     DT get_at_index(int index);
+
+    /**
+     * Get data of node at specific index
+     * @param index
+     * @return data
+     */
+    DT get_data_at_index(int index);
 
     /**
      * Get first occurrence (index) of given node
